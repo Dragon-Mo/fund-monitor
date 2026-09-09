@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Fetch formal fund NAV/history and each configured target ETF quote."""
+"""Fetch formal fund NAV/history plus configured ETF and index quotes."""
 import glob
 import json
 import re
@@ -96,14 +96,16 @@ def fetch_etf_quotes(codes):
 def main():
     profiles = load_profiles()
     configs = {}
-    etf_codes = set()
+    market_codes = set()
     for profile in profiles:
         for config in profile.get("funds", []):
             configs.setdefault(config["code"], config)
             if config.get("etf_code"):
-                etf_codes.add(config["etf_code"])
+                market_codes.add(config["etf_code"])
+            if config.get("index_code"):
+                market_codes.add(config["index_code"])
 
-    quotes = fetch_etf_quotes(sorted(etf_codes))
+    quotes = fetch_etf_quotes(sorted(market_codes))
     details = {}
     for code, config in configs.items():
         history = fetch_fund_history(code)
@@ -115,6 +117,9 @@ def main():
             "etfCode": config.get("etf_code", ""),
             "etfName": config.get("etf_name", ""),
             "etf": quotes.get(config.get("etf_code", "")),
+            "indexCode": config.get("index_code", ""),
+            "indexName": config.get("index_name", ""),
+            "index": quotes.get(config.get("index_code", "")),
             "defaults": config.get("defaults", {}),
         }
 

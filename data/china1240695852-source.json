@@ -6,6 +6,8 @@
       "name": "华夏有色金属ETF联接A",
       "etf_code": "sh516650",
       "etf_name": "有色金属ETF",
+      "index_code": "sh000811",
+      "index_name": "中证细分有色金属产业主题指数",
       "defaults": {
         "budget": 1000,
         "level_count": 5,
