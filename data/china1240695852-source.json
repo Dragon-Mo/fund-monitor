@@ -1,12 +1,17 @@
 {
-  "username": "china1240695852-source",
+  "username": "Dragon-Mo",
   "funds": [
-    {"code": "001480", "name": "财通成长优选混合A"},
-    {"code": "014915", "name": "财通匠心优选一年持有混合A"}
-  ],
-  "stocks": [
-    {"code": "sz000001", "name": "平安银行"},
-    {"code": "sh600519", "name": "贵州茅台"},
-    {"code": "sz300750", "name": "宁德时代"}
+    {
+      "code": "016707",
+      "name": "华夏有色金属ETF联接A",
+      "etf_code": "sh516650",
+      "etf_name": "有色金属ETF",
+      "defaults": {
+        "budget": 1000,
+        "level_count": 5,
+        "step_pct": 5,
+        "allocation": "increasing"
+      }
+    }
   ]
 }
