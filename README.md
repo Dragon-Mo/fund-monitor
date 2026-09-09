@@ -2,7 +2,7 @@
 
 一个适合手机使用的个人基金监控网页。数据由 GitHub Actions 自动更新，页面由 GitHub Pages 免费托管，不需要购买域名或服务器。
 
-访问地址：`https://china1240695852-source.github.io/fund-monitor/`
+访问地址：`https://dragon-mo.github.io/fund-monitor/`
 
 ## 当前配置
 
@@ -26,7 +26,7 @@
 
 ```json
 {
-  "username": "china1240695852-source",
+  "username": "Dragon-Mo",
   "funds": [
     {
       "code": "016707",
